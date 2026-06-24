@@ -28,11 +28,18 @@
 
 | Edge Case | Prompt Used | AI-Suggested Test | Did It Pass? | Your Reasoning |
 |-----------|-------------|-------------------|--------------|----------------|
-| | | | | |
-| | | | | |
-| | | | | |
+| Off-by-one boundaries | "Identify edge cases for the check_guess function and generate pytest cases to verify the game handles them correctly." | Tested guesses immediately above and below the secret number. | Yes | Boundary values are important because comparison bugs often occur when values are close to the target. |
 
----
+| Extreme range values | "Generate pytest cases for unusual inputs that could break check_guess." | Tested extremely large guesses compared to the secret number. | Yes | Large values verify that the comparison logic works correctly beyond normal gameplay ranges. |
+
+| Zero and negative guesses | "Suggest edge cases for a number guessing game and create tests for them." | Tested zero and negative guesses against a positive secret number. | Yes | These inputs verify that invalid or unusual guesses still return the correct Too Low/Too High result. |
+
+
+All generated tests were reviewed manually and verified by running pytest. The final test result was:
+
+```text
+7 passed in 0.04s
+```
 
 ## Linting & Style (SF9)
 
