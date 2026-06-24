@@ -61,8 +61,6 @@ I also ran the Streamlit application and manually checked that the hints correct
 
 Streamlit reruns the entire script from top to bottom whenever a user interacts with the app, such as clicking a button or entering a value. Session state allows the app to remember information between those reruns, such as the secret number, score, or number of attempts. Without session state, the variables would reset every time the app refreshed.
 
----
-
 ## 5. Looking ahead: your developer habits
 
 One habit I want to reuse in future projects is testing my code after making changes instead of assuming the fix works. Writing small tests helped me verify that the game logic was correct and prevented new bugs from being introduced.
