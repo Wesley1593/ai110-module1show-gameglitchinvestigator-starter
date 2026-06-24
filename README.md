@@ -25,29 +25,42 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+This project involved using an AI coding assistant as a debugging and refactoring partner. The AI helped identify bugs, suggest code improvements, and create tests to verify fixes.
+
+I used AI to move the check_guess function from app.py into logic_utils.py, which separated game logic from UI code. I also used AI suggestions to identify incorrect hint behavior and fix the comparison logic.
+
+I verified every change by reviewing the code, running pytest, and manually testing the Streamlit game.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User enters a guess of 40.
+2. The game checks the guess against the secret number and returns "Too Low".
+3. User enters a guess of 70.
+4. The game returns "Too High" and tells the user to guess lower.
+5. User enters the correct guess.
+6. The game returns "Win" and the game ends successfully.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
 
-```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
-```
+```tests\test_game_logic.py .... [100%]
+=============================================
+4 passed in 0.04s
+=============================================
+
+
+tests/test_game_logic.py::test_winning_guess PASSED                      [ 14%]
+tests/test_game_logic.py::test_guess_too_high PASSED                     [ 28%]
+tests/test_game_logic.py::test_guess_too_low PASSED                      [ 42%]
+tests/test_game_logic.py::test_guess_below_secret_returns_too_low PASSED [ 57%]
+tests/test_game_logic.py::test_off_by_one_boundaries PASSED              [ 71%]
+tests/test_game_logic.py::test_extreme_range_values PASSED               [ 85%]
+tests/test_game_logic.py::test_zero_and_negative_guesses PASSED          [100%]
+
+============================== 7 passed in 0.04s ==============================
 
 ## 🚀 Stretch Features
 
