@@ -33,10 +33,10 @@
 | Zero and negative guesses | "Suggest edge cases for a number guessing game and create tests for them." | Tested zero and negative guesses against a positive secret number. | Yes | These inputs verify that invalid or unusual guesses still return the correct Too Low/Too High result. |
 
 All generated tests were reviewed manually and verified by running pytest. The final test result was:
-
 ```text
 7 passed in 0.04s
 ```
+
 
 
 ## Linting & Style (SF9)
