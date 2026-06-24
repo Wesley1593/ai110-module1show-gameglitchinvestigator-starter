@@ -36,7 +36,7 @@ All generated tests were reviewed manually and verified by running pytest. The f
 
 ```text
 7 passed in 0.04s
-```
+
 ## Linting & Style (SF9)
 
 > Document your use of AI for linting or code style improvements.
