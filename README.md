@@ -46,12 +46,7 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 
 ## 🧪 Test Results
 
-```tests\test_game_logic.py .... [100%]
-=============================================
-4 passed in 0.04s
-=============================================
-
-
+```text
 tests/test_game_logic.py::test_winning_guess PASSED                      [ 14%]
 tests/test_game_logic.py::test_guess_too_high PASSED                     [ 28%]
 tests/test_game_logic.py::test_guess_too_low PASSED                      [ 42%]
@@ -61,7 +56,5 @@ tests/test_game_logic.py::test_extreme_range_values PASSED               [ 85%]
 tests/test_game_logic.py::test_zero_and_negative_guesses PASSED          [100%]
 
 ============================== 7 passed in 0.04s ==============================
+```
 
-## 🚀 Stretch Features
-
-- [ ] [If you choose to complete Challenge 4, describe the Enhanced UI changes here — a screenshot is optional]
