@@ -5,10 +5,10 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it? 
-  # The game looked fine when I first ran it except for the attempts allowed count.
+   The game looked fine when I first ran it, except for the attempts allowed count.
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
-  # The attempts left number is off and the target numbers were negative instead of in the range of 1 - 100
+  The number of attempts left is off, and the target numbers were negative instead of in the range of 1 - 100
 
 **Bug Reproduction Log**
 
@@ -16,9 +16,9 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input    | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------   |-------------------|-----------------|------------------------|
-|guess of 0|  "Too low" hint   | "Too High" Hint |  None     
-|new game  |  Game restart        Nothing           None
-|score  number in between 1 - 100   negative number   None
+|guess of 0|  "Too low" hint   | "Too High" Hint |  None     |
+|Start new game  |  Game should restart with a new target number     |   Game did not restart correctly       |    None |
+|New game target generation| Target number should be between 1-100 | Negative target numbers appeared| none |
 
 ---
 
@@ -28,13 +28,13 @@ Document at least 3 bugs you found. Add rows as needed.
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
-# Correct AI Suggestion
+### Correct AI Suggestion
 
-The AI suggested moving the check_guess function from app.py into logic_utils.py to separate game logic from UI code. This suggestion was correct because it made the code easier to maintain and matched the goal of separating logic from the Streamlit interface.
+I used Claud as my AI coding assistant. The AI suggested moving the check_guess function from app.py into logic_utils.py to separate game logic from UI code. This suggestion was correct because it made the code easier to maintain and matched the goal of separating logic from the Streamlit interface.
 
 I verified this by running pytest and confirming that all tests passed after the refactor. I also tested the game manually to confirm that Too High, Too Low, and Win responses worked correctly.
 
-# Incorrect/Misleading AI Suggestion
+### Incorrect/Misleading AI Suggestion
 
 The AI initially found that the old check_guess function used a try/except block that allowed string comparisons. This could have made it seem like the function needed to support strings, but that was actually hiding a bug.
 
@@ -49,9 +49,11 @@ I verified this by inspecting app.py and finding that the secret number was bein
 
 I verified my fixes by creating pytest test cases for the game's guessing logic. I tested winning guesses, guesses above the secret number, and guesses below the secret number.
 
-The command `pytest` was used to run the tests. The final result was:
+The final result was:
 
-4 passed in 0.04s
+```text
+7 passed in 0.04s
+```
 
 I also ran the Streamlit application and manually checked that the hints correctly instructed the player to go higher or lower.
 
