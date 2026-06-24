@@ -11,28 +11,14 @@ def parse_guess(raw: str):
     """
     raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
 
-# FIX: Refactored check_guess logic into logic_utils.py with AI coding assistant support.
-# Verified behavior using pytest tests for Win, Too High, and Too Low cases.
-
 
 def check_guess(guess, secret):
     """
-    Compare a guess to the secret number and return the outcome.
+    Compare guess to secret and return (outcome, message).
 
-    Args:
-        guess: The player's guessed number.
-        secret: The secret target number.
-
-    Returns:
-        "Win"      if the guess equals the secret,
-        "Too Low"  if the guess is below the secret,
-        "Too High" if the guess is above the secret.
+    outcome examples: "Win", "Too High", "Too Low"
     """
-    if guess == secret:
-        return "Win"
-    if guess < secret:
-        return "Too Low"
-    return "Too High"
+    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
